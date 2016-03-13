@@ -16,6 +16,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <meta-data android:name="omlet.apikey" android:value="0010416fad63f9d33733cdc24732e7b8c52900050b66f2bdb4"/>
+        <meta-data android:name="omlet.secret" android:value="f0d83c66d10f4b8866d4a493e0166c1244c2faab8240cb18e0c597d1b39a43bc"/>
+
+        <provider
+                android:authorities="${applicationId}.omlib.provider"
+                android:name="mobisocial.omlib.service.OmlibContentProvider"
+        />
+
+        <provider
+                android:name="glrecorder.Initializer"
+                android:authorities="${applicationId}.glrecorder.initializer"
+                android:exported="false"
+                android:initOrder="2147483647" />
     </application>
     <uses-permission android:name="android.permission.INTERNET"/>
 

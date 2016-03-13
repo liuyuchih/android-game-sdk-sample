@@ -13,6 +13,7 @@ import android.view.Window;
 import android.webkit.*;
 import android.widget.ImageButton;
 import android.widget.ProgressBar;
+import mobisocial.omlet.OmletGameSDK;
 
 public class ArcadeActivity extends Activity {
     private static final String TAG = "Arcade";
@@ -50,7 +51,23 @@ public class ArcadeActivity extends Activity {
         });
 
         _View.loadUrl("http://html5games.com");
+
+        OmletGameSDK.setGameChatOverlayEnabled(this, true);
+        OmletGameSDK.setRecordingControlsEnabled(this, true);
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        OmletGameSDK.onGameActivityResume(this);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        OmletGameSDK.onGameActivityPause(this);
+    }
+
     @Override
     public void onBackPressed() {
         if(_View.canGoBack()) {
