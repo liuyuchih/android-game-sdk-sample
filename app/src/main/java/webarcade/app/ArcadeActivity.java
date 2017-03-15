@@ -53,7 +53,6 @@ public class ArcadeActivity extends Activity {
         _View.loadUrl("http://html5games.com");
 
         OmletGameSDK.setGameChatOverlayEnabled(this, true);
-        OmletGameSDK.setRecordingControlsEnabled(this, true);
     }
 
     @Override

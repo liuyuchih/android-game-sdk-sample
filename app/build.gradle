@@ -10,6 +10,7 @@ apply plugin: 'com.android.application'
 
 repositories {
     jcenter()
+    mavenLocal()
     maven {
         url "http://repo.omlet.me/maven"
     }
@@ -25,6 +26,8 @@ android {
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
+
+        multiDexEnabled true
     }
 
     compileOptions {
@@ -42,5 +45,5 @@ android {
 dependencies {
     compile 'com.android.support:appcompat-v7:23.4.0'
     compile 'com.android.support:support-v4:23.4.0'
-    compile 'mobisocial.omlib:games:1.5.2-beta'
+    compile 'mobisocial.omlib:games:1.6.1-beta'
 }
