@@ -40,10 +40,21 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    dexOptions {
+        javaMaxHeapSize "4g"
+    }
 }
 
 dependencies {
     compile 'com.android.support:appcompat-v7:23.4.0'
     compile 'com.android.support:support-v4:23.4.0'
     compile 'mobisocial.omlib:games:1.6.1-beta'
+
+    compile 'com.facebook.android:facebook-android-sdk:4.16.1'
+    // These are for YouTube streaming
+    compile 'com.google.apis:google-api-services-youtube:v3-rev179-1.22.0'
+    compile 'com.google.http-client:google-http-client-android:1.22.0'
+    compile 'com.google.api-client:google-api-client-android:1.22.0'
+    compile 'com.google.android.gms:play-services-auth:9.2.1'
 }
